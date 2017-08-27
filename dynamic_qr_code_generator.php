@@ -4,14 +4,59 @@
  * Plugin URI: https://rakibh.com/
  * Description: Generate QR code for every page, post or whole Wordpress site. Share Smartly.
  * Version: 0.0.1
- * Author: codemier
+ * Author: Rakib Hasan
  * Author URI: https://rakibh.com/
  * License: GPL2
  */
+
+ class rkbDynamicQrCode 
+ {
+public $plugin_name ="dynamic_qr_code_generator";
+    public function  __construct()
+    {
+        add_action('add_meta_boxes',array($this,"add_admin_metabox"));
+        add_action('admin_enqueue_scripts',array($this,"load_admin_script"));
+
+    } 
+    public function add_admin_metabox()
+    {
+        $screens=array('post','page');
+        foreach($screens as $screen){
+            add_meta_box('cm_qrcode', 'QR code for the permalink', array($this,'admin_metabox_html'), $screen,'side','high');
+        }
+    }
+
+    public function admin_metabox_html()
+    {
+        $html = '<div id="qrcode"></div>';
+        $html .= $this->get_qrcode_js();
+        echo $html;
+    }
+    public function load_admin_script()
+    {
+        wp_enqueue_script( 'rkb-dynamic-qr-code', plugins_url( $this->plugin_name .'/js/qrcode.js' , dirname(__FILE__) ) );
+    }
+    public function get_qrcode_js()
+    {
+        $size = 100;
+        $text ="text";
+        $script_format='<script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : %d,
+            height : %d
+        });
+        qrcode.makeCode("%s");
+        </script>';
+        
+       return sprintf($script_format,$size,$size,$text);
+    }
+ }
+ $rkb_dynamic_qr_code= new rkbDynamicQrCode();
+ 
 ?>
 <?php
 //Adding action and filters
-add_action( 'add_meta_boxes', 'cm_qrcode_add_metabox' );
+// add_action( 'add_meta_boxes', 'cm_qrcode_add_metabox' );
 add_action( 'wp_dashboard_setup', 'cm_qrcode_dashboard' );
 if(function_exists('cm_qrcode')==false){
     function cm_qrcode(){
