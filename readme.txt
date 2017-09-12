@@ -38,8 +38,9 @@ Please contact us if you need custom features or any other things.
 
 == Installation ==
 
-
-1. Upload `cm_qrcode.php` to the `/wp-content/plugins/cm_qrcode` directory
+1.Download the Plugin.
+1.Unzip the pluginusing 7Zip or Winzip.
+1. Upload `dynamic_qr_code_generator` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Enjoy the power of QR codes.
 
