@@ -14,20 +14,18 @@ Generate QR code for every page, post or whole Wordpress site. Share Smartly.
 
 (Quick Response code) A two-dimensional bar code that is widely used to cause a Web page to download into the user's smartphone when scanned with a mobile tagging app. 'Dyanomic QR Code Generator' plugin generate qr code for each and every page, post and site url . Its easy to use from your sidebars. No setting up needed just plug and play.
 
-=Shortcode=
-You can use [dqr_code] shortcode to display QR code in frontend.
-Useage Example-
-*[dqr_code] - shows QR code for permalink of current post, page or custom post type.
-*[dqr_code url="http://example.com"] - shows QR code for "http://example.com".
-*[dqr_code post_id="99"] - shows QR code for permalink of post ID "99". (supports post,page or custom post type).
-*[dqr_code url="http://example.com"] - shows QR code for "http://example.com" and the 'post_id' parameter will be denied.
-*[dqr_code url="http://example.com" size="300" color="#000000" bgcolor="#ffffff"] - shows QR code for "http://example.com". Where the QR code will be 300px X300px size and will have "#000000" as color and "#ffffff" as background color. Defaults: Size= 200, Color="#000000", Background Color="#ffffff"; 
+= Shortcode =
+* [dqr_code] - shows QR code for permalink of current post, page or custom post type.
+* [dqr_code url="http://example.com"] - shows QR code for "http://example.com".
+* [dqr_code post_id="99"] - shows QR code for permalink of post ID "99". (supports post,page or custom post type).
+* [dqr_code url="http://example.com"] - shows QR code for "http://example.com" and the 'post_id' parameter will be denied.
+* [dqr_code url="http://example.com" size="300" color="#000000" bgcolor="#ffffff"] - shows QR code for "http://example.com". Where the QR code will be 300px X300px size and will have "#000000" as color and "#ffffff" as background color. Defaults: Size= 200, Color="#000000", Background Color="#ffffff"; 
 
 = Key Feratures: =
 
 * Easy install
 * Very easy to configure.
-*Easy to use shortcor
+* Easy to use shortcode.
 
 = Rate us/ Feedback: =
 
